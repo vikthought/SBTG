@@ -120,20 +120,6 @@ SLURM scripts use placeholder paths (`PROJECT_DIR="/path/to/your/project"`) that
 
 ---
 
-## Documentation
-
-| Document | Purpose |
-|----------|---------|
-| [pipeline/README.md](pipeline/README.md) | Script-by-script reference, arguments, outputs, cluster deployment |
-| [analysis/README.md](analysis/README.md) | Analysis workflow, script catalog, inputs/outputs |
-| [merged_results/README.md](merged_results/README.md) | Results summary, data dictionary, key findings |
-| [docs/PIPELINE.md](docs/PIPELINE.md) | End-to-end dependency flow and artifact handoff |
-| [docs/METHODS.md](docs/METHODS.md) | Method assumptions and labeling conventions |
-| [docs/RESULTS.md](docs/RESULTS.md) | Results artifact map (`results/` vs `merged_results/`) |
-| [merged_results/external_baselines/README.md](merged_results/external_baselines/README.md) | External DL baseline setup and results |
-
----
-
 ## Dependencies
 
 See `requirements.txt` for pinned versions. Core dependencies:
