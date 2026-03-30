@@ -1,31 +1,6 @@
 # Functional Connectome Inference via Score-Based Temporal Graphical Models
 
-Inferring *C. elegans* functional connectivity from calcium imaging using Score-Based Temporal Graphical (SBTG) models. Networks are validated against `Cook_Synapses_2019` (structural benchmark) and `Randi_Optogenetics_2023` (functional benchmark).
-
----
-
-## Key Results
-
-| Benchmark               | SBTG (Imputed)    | Best Baseline | Improvement |
-| ----------------------- | ----------------- | ------------- | ----------- |
-| **Cook_Synapses_2019**       | AUROC = **0.584** | Pearson 0.576 | +1.4%       |
-| **Randi_Optogenetics_2023**  | AUROC = **0.643** | Granger 0.602 | +6.8%       |
-
-**Key innovations:**
-
-- Donor-based imputation: 6 to 20 worms
-- Optuna + null_contrast HP objective (correlates with biological AUROC)
-- Multi-block windows for lag-separated Jacobians (Theorem 5.1)
-
-### Data
-
-- **Source:** NeuroPAL calcium imaging (Yemini et al., 2021)
-- **Sampling:** 4 Hz, 240 seconds per recording
-- **Neurons:** 80 (D/V collapsed + tail integration)
-- **Worms:** 20 (via donor imputation)
-- **Stimuli:** Butanone, Pentanedione, NaCl
-
----
+Inferring *C. elegans* functional connectivity from calcium imaging using Score-Based Temporal Graphical (SBTG) models. Networks are validated against `Cook_Synapses_2019` (structural benchmark) and `Randi_Optogenetics_2023` (functional benchmark)
 
 ## Quick Start
 
@@ -136,9 +111,6 @@ sbatch scripts/synthetic_slurm.sh
 
 # Reviewer-scale synthetic benchmark (includes optional external DL baselines)
 sbatch scripts/syntheticexperiment2_slurm.sh --medium --n-neurons 80 --run-external-baselines
-
-# Fast baseline-only synthetic sweep (PCMCI+ / DYNOTEARS + external)
-sbatch scripts/synthetic_extra_run.sh
 
 # External DL baselines (NRI / NetFormer / LINT)
 sbatch scripts/external_baselines_slurm.sh nacl 50
